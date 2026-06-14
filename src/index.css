@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #111317;
+  --color-surface-dim: #111317;
+  --color-surface-bright: #37393d;
+  --color-surface-container-lowest: #0c0e12;
+  --color-surface-container-low: #1a1c1f;
+  --color-surface-container: #1e2023;
+  --color-surface-container-high: #282a2e;
+  --color-surface-container-highest: #333539;
+  --color-on-surface: #e2e2e7;
+  --color-on-surface-variant: #b9cacb;
+  --color-outline: #849495;
+  --color-outline-variant: #3a494b;
+  
+  /* Brand Specific Colors from Neon Avant-Garde Style */
+  --color-electric-cyan: #00f2ff;
+  --color-radioactive-lime: #ccff00;
+  --color-magenta-flash: #ff00e5;
+  --color-neutral-silver: #f4f4f9;
+  --color-background-indigo: #0a0a0f;
+  
+  --font-syne: "Syne", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+/* Custom styles for high-fidelity portfolio canvas */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #111317;
+    color: #e2e2e7;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: #00f2ff;
+    color: #111317;
+  }
+
+  /* Elegant minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #111317;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #282a2e;
+    border-radius: 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f2ff;
+  }
+}
+
+/* Animated gradient background */
+@keyframes pulseGradient {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px) rotate(0deg);
+  }
+  33% {
+    transform: scale(1.15) translate(30px, -50px) rotate(120deg);
+  }
+  66% {
+    transform: scale(0.9) translate(-40px, 40px) rotate(240deg);
+  }
+}
+
+.animate-glow-mesh-1 {
+  animation: pulseGradient 25s infinite ease-in-out;
+}
+
+.animate-glow-mesh-2 {
+  animation: pulseGradient 35s infinite ease-in-out reverse;
+}
+
+.animate-glow-mesh-3 {
+  animation: pulseGradient 45s infinite ease-in-out;
+}
+
+/* Subtle scanlines overlay for that retro terminal feel */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* Pixel grid overlay */
+.dot-grid {
+  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+
+/* Custom hover animations for brutalist elements */
+.hover-invert {
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-invert:hover {
+  background-color: #00f2ff !important;
+  color: #111317 !important;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.hover-invert-lime:hover {
+  background-color: #ccff00 !important;
+  color: #111317 !important;
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+}

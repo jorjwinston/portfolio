@@ -1,0 +1,6 @@
+{
+  "name": "Studio Void",
+  "description": "An avant-garde, brutalist digital design portfolio website for Studio Void.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
